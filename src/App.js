@@ -21,6 +21,12 @@ const initialFriends = [
   },
 ];
 
+function Button({children, onClick}) {
+  return (
+    <button className="button" onClick={onClick}>{children}</button>
+  )
+}
+
 function App() {
   const [showAddFriend, setShowAddFriend] = useState(false)
   const [friends, setFriends] = useState(initialFriends)
@@ -114,11 +120,7 @@ function Friend({friend, onSelection, friendSelected}) {
   )
 
 }
-function Button({children, onClick}) {
-  return (
-    <button className="button" onClick={onClick}>{children}</button>
-  )
-}
+
 
 function FormAddFriend({onAddFriend}) {
   const [name, setName] = useState('')
